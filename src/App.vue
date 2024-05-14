@@ -10,7 +10,8 @@ import { RouterLink, RouterView } from "vue-router";
         <span class="text-white font-semibold text-2xl">The Creative Common</span>
       </div>
       <div class="pt-4">
-        <ul>
+        Navigation
+        <ul class="px-2">
           <li class="text-gray-300 text-sm flex items-center gap-x-2 cursor-pointer p-2 hover:bg-slate-700 rounded-md mt-2">
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -19,6 +20,17 @@ import { RouterLink, RouterView } from "vue-router";
             </span>
             <span>Membership</span>
           </li>
+          <li class="text-gray-300 text-sm flex items-center gap-x-2 cursor-pointer p-2 hover:bg-slate-700 rounded-md">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+              </svg>
+            </span>
+            <span>Inventory</span>
+          </li>
+        
+          
+
         </ul>
       </div>
     </div>

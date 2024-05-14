@@ -1,17 +1,44 @@
 <script setup>
+  var user_data = [
+    {
+      name: "Justin Tokarchuk",
+      email_address: "justin@thecreativecommon.ca",
+      status: true,
+      membership_type: "Founder",
+      expires: "Never"
+    },
+    {
+      name: "Joe Houston",
+      email_address: "joe@thecreativecommon.ca",
+      status: true,
+      membership_type: "Founder",
+      expires: "Never"
+    },
+    {
+      name: "Test User",
+      email_address: "test@none.com",
+      status: true,
+      membership_type: "Member",
+      expires: "2024-05-01"
+    }
+  ]
 </script>
 
 <template>
   <div>
     <h1 class="text-2xl font-semibold">
-      Membership
+      Membership Management
     </h1>
   </div>
   <div>
     <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
+      <div class="flex justify-end p-2">
+        <button class="bg-blue-500 text-white text-sm p-2 font-semibold">Add Member</button>
+      </div>
       <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
         <thead class="bg-gray-50">
           <tr>
+            <th scope="col" class="px-6 py-4 font-meiudm text-gray-900"><input type="checkbox"></th>
             <th scope="col" class="px-6 py-4 font-medium text-gray-900">Name</th>
             <th scope="col" class="px-6 py-4 font-medium text-gray-900">Status</th>
             <th scope="col" class="px-6 py-4 font-medium text-gray-900">Membership Type</th>
@@ -20,19 +47,14 @@
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-          <tr class="hover:bg-gray-50">
+          <tr v-for="item in user_data" class="hover:bg-gray-50">
+            <th class="px-6 py-4">
+              <input type="checkbox" class="w-4">
+            </th>
             <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-              <div class="relative h-10 w-10">
-                <img
-                  class="h-full w-full rounded-full object-cover object-center"
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                />
-                <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
-              </div>
               <div class="text-sm">
-                <div class="font-medium text-gray-700">Justin Tokarchuk</div>
-                <div class="text-gray-400">justin@thecreativecommon.ca</div>
+                <div class="font-medium text-gray-700">{{ item.name  }}</div>
+                <div class="text-gray-400">{{ item.email_address }}</div>
               </div>
             </th>
             <td class="px-6 py-4">
@@ -43,9 +65,9 @@
                 Active
               </span>
             </td>
-            <td class="px-6 py-4">Founder</td>
+            <td class="px-6 py-4">{{ item.membership_type }}</td>
             <td class="px-6 py-4">
-              Never
+              {{ item.expires }}
             </td>
             <td class="px-6 py-4">
               <div class="flex justify-end gap-4">
